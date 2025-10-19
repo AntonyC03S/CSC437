@@ -62,3 +62,14 @@ svg.icon {
   vertical-align: calc(0.5em - 0.5 * var(--size-icon));
   fill: currentColor;
 }
+
+
+
+.page{
+  --page-grids: 3;
+  display: grid;
+  grid-template-columns:
+    repeat( var(--page-grids), 1fr );
+  gap: var(--size-spacing-medium);
+
+}
