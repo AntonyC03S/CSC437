@@ -4,8 +4,10 @@ header {
     text-align: center;
 }
 body{
+    color: var(--color-text);
     background-color: var(--color-body-page);
 }
+
 ul{
     list-style-type: none; 
     padding: 0;            
@@ -72,4 +74,10 @@ svg.icon {
     repeat( var(--page-grids), 1fr );
   gap: var(--size-spacing-medium);
 
+}
+
+.Dark_Mode_check_box{
+  position: fixed;
+  top: 30px;
+  right: 10px;
 }
