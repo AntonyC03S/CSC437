@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanical Wiki</title>
+    <link rel="stylesheet" href="/styles/page.css" />
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap" rel="stylesheet">
+    <script defer src="/title.js"></script>
+    <script type = "module">
+      import { define } from "@calpoly/mustang";
+      import { DestinationElement } from "/src/destination.js";
+
+      define({
+        "blz-accommodation": DestinationElement
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Mechanical Wiki</h1>
+      <img src="/images/Mechanical_Background.jpeg" alt="Mechanical_Background" > 
+      <label id="darkmode-label" class = Dark_Mode_check_box>
+        <input id="darkmode-input" type="checkbox" autocomplete="off" />
+        Dark mode
+      </label>
+    </header>
+
+      <div class="page">
+        <ul>
+          <h3>Assembly System</h3>          
+          <li>
+              <svg class="icon">
+                <use href="/icons/noun-robot-arm-6492246.svg#arm" />
+              </svg>
+            <a href="Arm.html">Arm</a>
+          </li>
+
+          <li>
+              <svg class="icon">
+                <use href="/icons/noun-drivetrain-3155760.svg#drivetrain" />
+              </svg>
+            <a href="Drivetrain.html">Drivetrain</a>
+          </li>
+
+          <li>
+              <svg class="icon">
+                <use href="/icons/noun-catapult-7384298.svg#catapult" />
+              </svg>
+            <a href="Launcher.html">Launcher</a>
+          </li>
+
+          <li>
+              <svg class="icon">
+                <use href="/icons/noun-elevator-8098044.svg#elevator" />
+              </svg>
+            <a href="Elevator.html">Elevator</a>
+          </li>
+
+
+        </ul>
+
+      </div>
+
+  </body>
+</html>
