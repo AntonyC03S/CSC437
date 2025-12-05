@@ -1,11 +1,17 @@
 header {
     color: var(--color-text);
-    background-color: var(--color-background-page);
+    background-color: var(--color-background-card);
     text-align: center;
+    margin: 0;
+    padding: 0; 
 }
 body{
     color: var(--color-text);
-    background-color: var(--color-body-page);
+    background: var(--color-body-page);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding-top: 75px;
 }
 
 ul{
@@ -32,10 +38,13 @@ h2 {
 h3 {
   font-size: var(--size-type-large);
   font-weight: var(--font-weight-normal);
+  color: var(--color-accent);
+  
 }
 h4 {
   font-size: var(--size-type-mlarge);
   font-weight: var(--font-weight-bold);
+  color: var(--color-accent);
 }
 h5 {
   font-size: var(--size-type-body);
@@ -49,11 +58,9 @@ h6 {
 dt {
   font-weight: var(--size-type-body);
 }
-h3 {
-  color: var(--color-accent);
-}
 a {
   color: var(--color-link);
+  text-decoration: none;
 }
 svg.icon {
   --size-icon: var(--size-icon-normal);
@@ -65,6 +72,9 @@ svg.icon {
   fill: currentColor;
 }
 
+#main_title {
+  text-align: center;
+}
 
 
 .page{
@@ -76,8 +86,10 @@ svg.icon {
 
 }
 
-.Dark_Mode_check_box{
-  position: fixed;
-  top: 30px;
-  right: 10px;
+
+.header_wraper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 }

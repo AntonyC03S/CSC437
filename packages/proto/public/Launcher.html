@@ -1,30 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Launcher</title>
-  <link rel="stylesheet" href="styles/page.css" />
-  <link rel="stylesheet" href="styles/tokens.css" />
-  <script defer src="title.js"></script>
-</head>
-<body>
-    <header>
-        <h1><a href="index.html">Mechanical Wiki</a> </h1>
-      <label id="darkmode-label" class = Dark_Mode_check_box>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanical Wiki</title>
+    <link rel="stylesheet" href="styles/tokens.css" />
+    <link rel="stylesheet" href="styles/page.css" />
+    <link rel="stylesheet" href="styles/dark_mode_switch.css" />
+    <link rel="stylesheet" href="styles/cards.css" />
+    <link rel="stylesheet" href="styles/sidebar.css" />
+    <link rel="stylesheet" href="styles/model.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap" rel="stylesheet">
+    <script defer src="js/title.js"></script>
+    <script defer src="js/cards.js"></script>
+    <script defer src="js/sidebar.js"></script>
+
+    <script type="module"
+        src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js">
+    </script>
+
+
+    <header class = "header_wraper">
+      <a href="index.html"> <h1>Mechanical Wiki</h1></a>
+      <!-- <img src="images/Mechanical_Background.jpeg" alt="Mechanical_Background" >  -->
+      <!-- <label id="darkmode-label" class = Dark_Mode_check_box>
         <input id="darkmode-input" type="checkbox" autocomplete="off" />
         Dark mode
+      </label> -->
+
+              <!-- /* Theme Switch (https://uiverse.io/JustCode14/red-dingo-61) */
+              /* The switch - the box around the slider */ -->
+
+      <label class="switch" id="darkmode-label">
+        <input checked="true" id="checkbox" type="checkbox" />
+        <span class="slider">
+          <div class="star star_1"></div>
+          <div class="star star_2"></div>
+          <div class="star star_3"></div>
+          <svg viewBox="0 0 16 16" class="cloud_1 cloud">
+            <path
+              transform="matrix(.77976 0 0 .78395-299.99-418.63)"
+              fill="#fff"
+              d="m391.84 540.91c-.421-.329-.949-.524-1.523-.524-1.351 0-2.451 1.084-2.485 2.435-1.395.526-2.388 1.88-2.388 3.466 0 1.874 1.385 3.423 3.182 3.667v.034h12.73v-.006c1.775-.104 3.182-1.584 3.182-3.395 0-1.747-1.309-3.186-2.994-3.379.007-.106.011-.214.011-.322 0-2.707-2.271-4.901-5.072-4.901-2.073 0-3.856 1.202-4.643 2.925"
+            ></path>
+          </svg>
+        </span>
       </label>
+
+
+      <button class="hamburger-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="backdrop"></div>
+
+      <aside class="sidebar"> 
+        <h2>Content</h2>
+
+        <div class="toc-section">
+          <button class="toc-toggle" type="button">
+            <span class="toc-arrow">▶</span>
+            <span class="toc-section-title">Assembly System</span>
+          </button>
+          <div class="toc-section-body">
+            <ul class="toc-list">
+              <li>
+                <svg class="icon">
+                  <use href="icons/noun-robot-arm-6492246.svg#arm" />
+                </svg>
+                <a href="Arm.html">Arm</a>
+              </li>
+
+              <li>
+                <svg class="icon">
+                  <use href="icons/noun-drivetrain-3155760.svg#drivetrain" />
+                </svg>
+                <a href="Drivetrain.html">Drivetrain</a>
+              </li>
+
+              <li>
+                <svg class="icon">
+                  <use href="icons/noun-catapult-7384298.svg#catapult" />
+                </svg>
+                <a href="Launcher.html">Launcher</a>
+              </li>
+
+              <li>
+                <svg class="icon">
+                  <use href="icons/noun-elevator-8098044.svg#elevator" />
+                </svg>
+                <a href="Elevator.html">Elevator</a>
+              </li>
+
+              <li>
+                <svg class="icon">
+                  <use href="icons/noun-intake-8076148.svg#intake" />
+                </svg>
+                <a href="Intake.html">Intake</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="toc-section collapsed">
+          <button class="toc-toggle" type="button">
+            <span class="toc-arrow">▶</span>
+            <span class="toc-section-title">Components</span>
+          </button>
+          <div class="toc-section-body">
+            <ul class="toc-list">
+              <li>
+                <svg class="icon">
+                  <use href="icons/noun-bearing-7826985.svg#bearing" />
+                </svg>
+                <a href="Bearing.html">Bearing</a>
+              </li>
+              <li>
+                <svg class="icon">
+                  <use href="icons/noun-gear-6263756.svg#gear" />
+                </svg>
+                <a href="Gear.html">Gear</a>
+              </li>
+              <li>
+                <svg class="icon">
+                  <use href="icons/noun-metal-spring-4162571.svg#spring" />
+                </svg>
+                <a href="Spring.html">Spring</a>
+              </li>
+              <li>
+                <svg class="icon">
+                  <use href="icons/noun-pulley-8176367.svg#pulley" />
+                </svg>
+                <a href="Pulley.html">Pulley</a>
+              </li>
+              <li>
+                <svg class="icon">
+                  <use href="icons/noun-screw-8001604.svg#screw" />
+                </svg>
+                <a href="Screw.html">Screw</a>
+              </li>
+              <li>
+                <svg class="icon">
+                  <use href="icons/noun-sprocket-433414.svg#sprocket" />
+                </svg>
+                <a href="Sprocket.html">Sprocket</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="toc-section collapsed">
+          <button class="toc-toggle" type="button">
+            <span class="toc-arrow">▶</span>
+            <span class="toc-section-title">Robot</span>
+          </button>
+          <div class="toc-section-body">
+            <ul class="toc-list">
+              <li class="toc-item"><a href="2024_VexU_GearSlinger.hmtl" class="toc-link">2024 VexU - GearSlinger</a></li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
     </header>
-    <div>
-        <h2>Launcher</h2>
-        <img src="images/Launcher.jpg" alt="Launcher image" >   
-    </div>
+  </head>
+  <body>
+    <h3 id = "main_title">Launcher</h3>
+    <!-- <img src="images/Robotics_Arm.jpg" alt="Arm image" >       -->
 
 
-    <p>
-    This is a Launcher
-    </p>
+    <model-viewer
+        src="models/Shooter.glb"
+        alt="3D Model"
+        camera-controls
+        auto-rotate
+        shadow-intensity="1"
+        class = "model">
+    </model-viewer>
 
-</body>
+  </body>
 </html>

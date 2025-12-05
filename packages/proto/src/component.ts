@@ -1,13 +1,15 @@
-// src/destination.ts
 import { html, css, LitElement } from "lit";
 import { property } from "lit/decorators.js";
+import reset from "./styles/reset.css.ts";
 
 export class DestinationElement extends LitElement {
   override render() {
-    return html`
-      <!-- paste your template here -->
-    `;
+    // as before...
   }
 
-  static styles = css``;
+  static styles = [
+    reset.styles,
+    css`
+      /* CSS for this component */
+    `];
 }
