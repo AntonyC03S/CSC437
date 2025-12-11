@@ -1,0 +1,113 @@
+import {
+  define,
+  Auth,
+  Dropdown,
+  Events,
+  Observer
+} from "@calpoly/mustang";
+import { css, html, LitElement } from "lit";
+
+import { state } from "lit/decorators.js";
+
+export class HeaderElement extends LitElement {
+  static uses = define({
+    "mu-dropdown": Dropdown.Element
+  });
+
+  @state()
+  loggedIn = false;
+
+  @state()
+  userid?: string;
+
+  render() {
+    return html`
+      <header>
+        <h1>Mechanical Wiki</h1>
+        <dark-mode-switch></dark-mode-switch>
+        <nav>
+
+          <mu-dropdown>
+            <a slot="actuator">
+              Hello, ${this.userid || "User"}
+            </a>
+            <menu>
+              <li>
+                ${this.loggedIn ?
+                  this.renderSignOutButton() :
+                  this.renderSignInButton()
+                }
+              </li>
+            </menu>
+          </mu-dropdown>
+        </nav>
+      </header>
+      </template>`;
+  }
+
+  static styles = [
+
+    css`
+    :host {
+      display: contents;
+    }
+    header {
+      --color-link: var(--color-link-inverted);
+
+      display: flex;
+      flex-wrap: wrap;
+      align-items: bottom;
+      justify-content: space-between;
+      padding: var(--size-spacing-medium);
+      background-color: var(--color-background-header);
+      color: var(--color-text-inverted);
+    }
+    header ~ * {
+      margin: var(--size-spacing-medium);
+    }
+    nav {
+      display: flex;
+      flex-direction: column;
+      flex-basis: max-content;
+      align-items: end;
+    }
+  `];
+
+  renderSignOutButton() {
+    return html`
+      <button
+        @click=${(e: UIEvent) => {
+          Events.relay(e, "auth:message", ["auth/signout"])
+        }}
+      >
+        Sign Out
+      </button>
+    `;
+  }
+
+  renderSignInButton() {
+    return html`
+      <a href="/login.html">
+        Sign In…
+      </a>
+    `;
+  }
+
+  _authObserver = new Observer<Auth.Model>(this, "blazing:auth");
+
+  connectedCallback() {
+    super.connectedCallback();
+    this._authObserver.observe((auth: Auth.Model) => {
+      const { user } = auth;
+
+      if (user && user.authenticated ) {
+        this.loggedIn = true;
+        this.userid = user.username;
+      } else {
+        this.loggedIn = false;
+        this.userid = undefined;
+      }
+    });
+  }
+
+}

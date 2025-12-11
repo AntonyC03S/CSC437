@@ -1,0 +1,27 @@
+[
+    {
+        "web_link": "Arm.html",
+        "icon_link": "icons/noun-robot-arm-6492246.svg#arm",
+        "name": "Arm"
+    },
+        {
+        "web_link": "Drivetrain.html",
+        "icon_link": "icons/noun-drivetrain-3155760.svg#drivetrain",
+        "name": "Drivetrain"
+    },
+        {
+        "web_link": "Launcher.html",
+        "icon_link": "icons/noun-catapult-7384298.svg#catapult",
+        "name": "Launcher"
+    },
+        {
+        "web_link": "Elevator.html",
+        "icon_link": "icons/noun-elevator-8098044.svg#elevator",
+        "name": "Elevator"
+    },
+    {
+        "web_link": "Intake.html",
+        "icon_link": "icons/noun-intake-8076148.svg#intake",
+        "name": "Intake"
+    }
+]        

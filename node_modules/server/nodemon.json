@@ -1,0 +1,17 @@
+{
+  "watch": ["src"],
+  "ignore": ["src/**/*.test.ts", "node_modules"],
+  "ext": "ts,mjs,js,json,graphql",
+  "exec": "npx etsc && node ./dist/index.js",
+  "env": {
+    "DEBUG": "express/*",
+    "STATIC": "../proto/dist"
+  },
+  "legacyWatch": true,
+  "exports": {
+      "./models": {
+        "import": "./src/models/index.ts"
+      }
+    },
+  "name": "server"
+}
